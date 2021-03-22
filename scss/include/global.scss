@@ -1,0 +1,16 @@
+/*      Global      */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 800px;
+  // background-image: url(img/background.jpg);
+  font-family: $font-lemonada;
+  background: $color-mine;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

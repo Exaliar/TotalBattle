@@ -1,0 +1,1242 @@
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
+#new_calk {
+  position: relative;
+  // box-sizing: border-box;
+  // font-family: Cursive, Verdana, Geneva, Tahoma, sans-serif;
+  // font-size: 16px;
+  // height: 100vh;
+  // width: 100%;
+  // background-color: darken($color: #727272, $amount: 0);
+  // display: flex;
+  // margin: auto;
+  // justify-content: center;
+  // align-items: center;
+}
+
+#calculator {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  font-family: $font-inconsolata;
+  // padding-bottom: 20px;
+}
+//Menu nowe potworow
+$border-color: #8a2be2;
+
+//Varibles
+
+$height: 35px;
+$height-before-expand: 55px;
+$height-after-expand: 295px;
+$border: 3px;
+$animation-delay: 0.5s;
+
+$lvl-O-color: #444444;
+$lvl-I-color: #c0c0c0;
+$lvl-II-color: #008000;
+$lvl-III-color: #0000ff;
+$lvl-IV-color: #800080;
+$lvl-V-color: #ff6600;
+$lvl-VI-color: #cc0000;
+$lvl-VII-color: #ffcc00;
+
+.I {
+  background-color: #c0c0c0;
+}
+.II {
+  background-color: #008000;
+}
+.III {
+  background-color: #0000ff;
+}
+.IV {
+  background-color: #800080;
+}
+.V {
+  background-color: #ff6600;
+}
+.VI {
+  background-color: #cc0000;
+}
+.VII {
+  background-color: #ffcc00;
+}
+
+#monsters {
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
+  .center {
+    font-family: $font-inconsolata;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    // overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // position: relative;
+    // top: 100px;
+    // left: 120px;
+    // margin: auto;
+    // height: 480px;
+    // width: 800px;
+    border-radius: 10px;
+    ul,
+    li {
+      list-style: none;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    & span {
+      display: block;
+      font-size: 30px;
+      height: 40px;
+      width: 150px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    & > .first-menu {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      width: 800px;
+      left: 125px;
+      top: 0;
+      .first-activ {
+        background-color: lightyellow;
+        ul {
+          display: flex;
+        }
+      }
+      & > li {
+        width: 150px;
+        margin: 20px 10px 0 0;
+        background-color: lightskyblue;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-top: $border-color 1px solid;
+        border-left: $border-color 1px solid;
+        border-right: $border-color 1px solid;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+          background-color: lightyellow;
+        }
+        & > ul {
+          display: none;
+          position: absolute;
+          flex-direction: column;
+          left: -90px;
+          .second-activ {
+            background-color: lightyellow;
+            .monsters {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          & > li {
+            &:hover {
+              background-color: lightyellow;
+            }
+            & > span {
+              font-size: 20px;
+              width: 90px;
+              height: 30px;
+              line-height: 30px;
+            }
+            background-color: lightskyblue;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top: $border-color 1px solid;
+            border-left: $border-color 1px solid;
+            border-bottom: $border-color 1px solid;
+            margin: 0 0 1px 0;
+            transition: all 0.3s ease-in-out;
+            .monsters {
+              width: 629px;
+              height: 329px;
+              position: absolute;
+              left: 91px;
+              top: 0px;
+              background-color: lightyellow;
+              border-right: $border-color 1px solid;
+              border-bottom: $border-color 1px solid;
+              display: none;
+              flex-direction: column;
+              hr {
+                width: 97%;
+                margin: 5px auto;
+              }
+              ul {
+                display: flex;
+                flex-wrap: wrap;
+                & > span {
+                  font-size: 18px;
+                  color: black;
+                  width: 115px;
+                  cursor: default;
+                  &:first-child {
+                    width: 53px;
+                  }
+                }
+                li {
+                  display: flex;
+                  flex-direction: row;
+                  width: 629px;
+                  span {
+                    &:first-child {
+                      width: 50px;
+                      margin-left: 3px;
+                      cursor: default;
+                      border: none;
+                      background-color: transparent;
+                      color: black;
+                      &:hover {
+                        background-color: transparent;
+                        color: black;
+                      }
+                    }
+
+                    width: 105px;
+                    font-size: 16px;
+                    background-color: lightskyblue;
+                    margin: 0 5px;
+                    border-radius: 5px;
+                    transition: all 0.3s ease-in-out;
+                    border: $border-color 1px solid;
+                    &:hover {
+                      background-color: #1d4a7e;
+                      color: white;
+                    }
+                  }
+                  .brak {
+                    background-color: black;
+                    color: white;
+                    cursor: default;
+                    &:hover {
+                      background-color: black;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#monsters {
+  display: none;
+}
+#armia {
+  // position: fixed;
+  // height: 100%;
+  // width: 100%;
+  // font-family: $font-inconsolata;
+  // background-color: rgba(0, 0, 0, 0.4);
+  // top: 0;
+  // left: 0;
+  // z-index: 999;
+  & > .center {
+    font-family: $font-inconsolata;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    ul,
+    li {
+      list-style: none;
+      user-select: none;
+      box-sizing: border-box;
+    }
+    & span {
+      display: block;
+      font-size: 30px;
+      height: 40px;
+      width: 150px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+    & > .first-menu-armia {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 800px;
+      margin: 40px 20px;
+      // left: 125px;
+      // top: 40px;
+      // & > .close-army {
+      //   width: 35px;
+      //   height: 35px;
+      //   border-radius: 50%;
+      //   line-height: 35px;
+      //   font-size: 40px;
+      //   position: absolute;
+      //   font-family: Arial, Helvetica, sans-serif;
+      //   position: absolute;
+      //   top: -17px;
+      //   right: -17px;
+      //   background-color: #ff7777;
+      //   color: black;
+      //   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+      //   &:hover {
+      //     background-color: red;
+      //     color: white;
+      //   }
+      // }
+      & > .first-sub-menu-armia {
+        & > span {
+          display: block;
+          font-size: 25px;
+          height: 45px;
+          width: 200px;
+          text-align: center;
+          line-height: 45px;
+          cursor: pointer;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          border-bottom: $border-color 1px solid;
+          border-right: $border-color 1px solid;
+          border-left: $border-color 1px solid;
+          background-color: lightskyblue;
+          transition: background-color 0.1s ease-in-out;
+          &:hover {
+            border-right: none;
+            background-color: lightyellow;
+          }
+        }
+        &:first-child > span {
+          border-top: $border-color 1px solid;
+        }
+        & > ul {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 0;
+          background-color: lightyellow;
+          & > li {
+            padding: 5px 0;
+          }
+        }
+        & > .second-menu-armia {
+          position: absolute;
+          left: 200px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          height: 360px;
+          width: 550px;
+          border-bottom: $border-color 1px solid;
+          border-top: $border-color 1px solid;
+          & > .second-sub-menu-armia {
+            & > .hr-armia {
+              margin: 10px auto 5px auto;
+              width: 90%;
+            }
+          }
+        }
+      }
+      .first-activ {
+        & > span {
+          border-right: none;
+          background-color: lightyellow;
+        }
+        & > ul {
+          display: flex;
+        }
+      }
+      .armia-column {
+        display: flex;
+        flex-direction: row;
+        & > span {
+          width: 300px;
+          height: 25px;
+          font-size: 17px;
+          line-height: 25px;
+          text-transform: uppercase;
+          cursor: default;
+        }
+        & > .armia-row {
+          display: flex;
+          flex-direction: row;
+          justify-content: left;
+          width: 250px;
+          border: none;
+          & input[type="radio"] {
+            display: none;
+          }
+          & > label {
+            display: block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            text-align: center;
+            margin-right: 5px;
+            scale: 1;
+            transition: scale ease-in-out 50ms;
+            filter: grayscale(1);
+          }
+          & > input[type="button"] {
+            width: 50px;
+            height: 30px;
+            color: green;
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: 2px solid forestgreen;
+            transition: background-color 150ms, color 150ms, left $animation-delay ease-in-out, top $animation-delay ease-in-out;
+            &:hover {
+              background-color: forestgreen;
+              color: white;
+            }
+          }
+          & > input[type="radio"]:checked + label {
+            scale: 1.3;
+            color: white;
+            filter: grayscale(0);
+          }
+        }
+      }
+    }
+  }
+}
+#armia {
+  display: none;
+}
+
+.name-section {
+  // width: 100%;
+  height: 30px;
+  width: 800px;
+  background-color: $border-color;
+  text-align: center;
+  span {
+    line-height: 30px;
+    width: 100%;
+    color: lightyellow;
+    text-transform: uppercase;
+  }
+}
+
+#raport {
+  font-family: $font-inconsolata;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  background-color: lightyellow;
+  padding-bottom: 20px;
+  & > section {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    position: relative;
+    margin: 5px 0;
+    & > .lp-raport {
+      height: 40px;
+      line-height: 60px;
+      width: 30px;
+      text-align: center;
+    }
+    & > .armia,
+    .monster {
+      width: 360px;
+      position: relative;
+      height: 40px;
+      user-select: none;
+      display: flex;
+      flex-direction: row;
+      & > .lvl-raport {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & > .lvl-O {
+          border: 3px solid $lvl-O-color;
+        }
+        & > .lvl-I {
+          border: 3px solid $lvl-I-color;
+        }
+        & > .lvl-II {
+          border: 3px solid $lvl-II-color;
+        }
+        & > .lvl-III {
+          border: 3px solid $lvl-III-color;
+        }
+        & > .lvl-IV {
+          border: 3px solid $lvl-IV-color;
+        }
+        & > .lvl-V {
+          border: 3px solid $lvl-V-color;
+        }
+        & > .lvl-VI {
+          border: 3px solid $lvl-VI-color;
+        }
+        & > .lvl-VII {
+          border: 3px solid $lvl-VII-color;
+        }
+        & > .lvl {
+          border-radius: 50%;
+          font-size: 1em;
+          display: block;
+          width: 35px;
+          height: 35px;
+          line-height: 29px;
+          display: flex;
+          text-align: center;
+          justify-content: center;
+          background: transparent;
+        }
+      }
+      & > .name {
+        padding-left: 5px;
+        height: 40px;
+        font-size: 1.5em;
+        line-height: 40px;
+        overflow: hidden;
+      }
+      & > .raport-count {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 200px;
+        right: 0;
+        & > .lost,
+        .live {
+          text-align: right;
+          width: 100%;
+          height: 20px;
+          font-size: 0.9em;
+          padding: 0 10px 0 0;
+          color: white;
+        }
+        & > .live {
+          background-color: green;
+          background: linear-gradient(to right, transparent, green);
+        }
+        & > .lost {
+          background-color: red;
+          background: linear-gradient(to right, transparent, red);
+        }
+      }
+      & > .defended {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.4);
+        & > i {
+          font-size: $height-before-expand;
+          font-family: Arial, Helvetica, sans-serif;
+          color: rgba(255, 0, 0, 0.6);
+          margin: auto auto;
+          transform: rotate(45deg) translateX(-65%);
+        }
+      }
+    }
+    & > .obrona-arrow,
+    .atak-arrow {
+      font-size: 35px;
+      line-height: 35px;
+      width: 50px;
+      height: 40px;
+      background: transparent;
+    }
+    & > .obrona-arrow {
+      color: red;
+    }
+    & > .atak-arrow {
+      color: green;
+    }
+    & > .damage {
+      position: absolute;
+      width: 770px;
+      height: 20px;
+      text-align: center;
+      bottom: 0;
+      right: 0;
+      background-color: rgba(119, 136, 153, 0.4);
+      line-height: 20px;
+      & > span {
+        height: 20px;
+        line-height: 20px;
+        font-size: 20px;
+      }
+    }
+  }
+  .hr-selected {
+    border-color: #8a2be2;
+    width: 95%;
+    margin: auto auto;
+  }
+}
+
+// #raport {
+//   // display: none;
+// }
+.O {
+  background-color: #444444;
+}
+.I {
+  background-color: #c0c0c0;
+}
+.II {
+  background-color: #008000;
+}
+.III {
+  background-color: #0000ff;
+}
+.IV {
+  background-color: #800080;
+}
+.V {
+  background-color: #ff6600;
+}
+.VI {
+  background-color: #cc0000;
+}
+.VII {
+  background-color: #ffcc00;
+}
+
+.lvl-O {
+  border: $border solid $lvl-O-color;
+}
+.lvl-I {
+  border: $border solid $lvl-I-color;
+}
+.lvl-II {
+  border: $border solid $lvl-II-color;
+}
+.lvl-III {
+  border: $border solid $lvl-III-color;
+}
+.lvl-IV {
+  border: $border solid $lvl-IV-color;
+}
+.lvl-V {
+  border: $border solid $lvl-V-color;
+}
+.lvl-VI {
+  border: $border solid $lvl-VI-color;
+}
+.lvl-VII {
+  border: $border solid $lvl-VII-color;
+}
+
+#selected {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  background: lightyellow;
+  font-family: $font-inconsolata;
+  .selected-row {
+    width: 800px;
+    background-color: lightyellow;
+    position: relative;
+    overflow: hidden;
+    .test {
+      display: none;
+    }
+    label .down-arrow {
+      display: flex;
+      height: $height-before-expand;
+      align-items: center;
+      font-size: 30px;
+      color: green;
+      width: 40px;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+      transition: transform 0.5s ease-in-out;
+    }
+    .test:checked ~ label .down-arrow {
+      color: red;
+      transform: rotate(180deg);
+    }
+  }
+  .expand-row {
+    height: $height-before-expand;
+    width: 100%;
+    transition: height $animation-delay ease-in-out;
+
+    .lp {
+      display: flex;
+      height: $height-before-expand;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transition: opacity $animation-delay ease-in-out;
+    }
+    .lvl {
+      border-radius: 50%;
+      font-size: 0.8em;
+      width: $height;
+      height: $height;
+      line-height: $height - 2 * $border;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      background: lightyellow;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 30px;
+      transition: left $animation-delay ease-in-out, top $animation-delay ease-in-out $animation-delay;
+    }
+    .name {
+      width: 300px;
+      height: $height;
+      font-size: 1.5em;
+      line-height: $height;
+      overflow: hidden;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 70px;
+      transition: left $animation-delay ease-in-out;
+    }
+
+    // -- input styles -- //
+
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+      border: 1px solid #8a2be2;
+      text-align: right;
+    }
+    input[type="number"]:focus {
+      border: 1px dotted #8a2be2;
+    }
+    input {
+      width: 75px;
+      height: $height;
+      border-radius: 5px;
+    }
+    .btn {
+      cursor: pointer;
+      width: 50px;
+      height: $height;
+      transition: background-color 150ms, color 150ms, left $animation-delay ease-in-out, top $animation-delay ease-in-out;
+    }
+    .btn-neutral {
+      border: 2px solid gray;
+      // &:hover {
+      //   background-color: royalblue;
+      //   color: white;
+      // }
+    }
+    .btn-danger {
+      border: 2px solid crimson;
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+    .btn-add {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      width: 80px;
+      right: 25px;
+      border: 2px solid forestgreen;
+      &:hover {
+        background-color: forestgreen;
+        color: white;
+      }
+    }
+    .btn-reset-all {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      width: 80px;
+      right: 110px;
+      border: 2px solid crimson;
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+    .btn-monster {
+      border: 2px solid royalblue;
+      &:hover {
+        background-color: royalblue;
+        color: white;
+      }
+    }
+    .first-atak {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      height: 40px;
+      width: 240px;
+      display: flex;
+      flex-direction: row;
+      span {
+        margin: 0 10px 0 10px;
+        line-height: 40px;
+        font-size: 1.2em;
+      }
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 80px;
+        height: 20px;
+        div {
+          display: flex;
+          flex-direction: row;
+          input {
+            width: 14px;
+            height: 14px;
+            margin: 3px;
+          }
+          label {
+            font-size: 1em;
+            user-select: none;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+    .zmiana-auto {
+      width: 150px;
+      height: $height-before-expand;
+      position: absolute;
+      left: 280px;
+      line-height: 17px;
+    }
+    .ilosc-ap,
+    .ilosc-hp {
+      position: absolute;
+      width: 25px;
+      text-align: center !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      border-width: 2px !important;
+    }
+
+    .ilosc-ap:focus,
+    .ilosc-hp:focus {
+      outline: none;
+    }
+    .btn-minus-ap,
+    .btn-minus-hp,
+    .btn-plus-ap,
+    .btn-plus-hp {
+      outline: none;
+      font-size: 1.5rem;
+      line-height: 15px;
+      // text-align: center;
+      align-items: center !important;
+      border-color: #8a2be2;
+      color: -internal-light-dark-color(#8a2be2, white);
+      // vertical-align: center;
+    }
+
+    // -- end input styles -- //
+
+    .army-ilosc {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 370px;
+      padding: 5px;
+      transition: left $animation-delay ease-in-out, top $animation-delay ease-in-out, width $animation-delay ease-in-out;
+    }
+    .army-ap-bonus {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 450px;
+      padding: 5px;
+      transition: left $animation-delay ease-in-out, top $animation-delay ease-in-out, width $animation-delay ease-in-out;
+    }
+    .army-hp-bonus {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 530px;
+      padding: 5px;
+      transition: left $animation-delay ease-in-out, top $animation-delay ease-in-out, width $animation-delay ease-in-out;
+    }
+
+    .btn-minus-ap {
+      width: 25px;
+      font-size: 30px;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 450px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      border: 2px solid crimson;
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+
+    .ilosc-ap {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 475px;
+    }
+
+    .btn-plus-ap {
+      width: 25px;
+      font-size: 30px;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 500px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+      border: 2px solid forestgreen;
+      &:hover {
+        background-color: forestgreen;
+        color: white;
+      }
+    }
+
+    .btn-minus-hp {
+      width: 25px;
+      font-size: 30px;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 530px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+      border: 2px solid crimson;
+      &:hover {
+        background-color: crimson;
+        color: white;
+      }
+    }
+
+    .ilosc-hp {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 555px;
+    }
+
+    .btn-plus-hp {
+      width: 25px;
+      font-size: 30px;
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 580px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+      border: 2px solid forestgreen;
+      &:hover {
+        background-color: forestgreen;
+        color: white;
+      }
+    }
+
+    .btn-neutral {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 610px;
+    }
+    .btn-danger {
+      position: absolute;
+      top: ($height-before-expand - $height) / 2;
+      left: 665px;
+    }
+
+    .range-div {
+      position: absolute;
+      top: $height-before-expand;
+      left: 0;
+      display: flex;
+      .min {
+        height: $height-before-expand;
+        line-height: $height-before-expand;
+        text-align: right;
+        min-width: 100px;
+      }
+      .army-count {
+        cursor: pointer;
+        height: $height-before-expand;
+        line-height: $height-before-expand;
+        width: 580px;
+        margin-left: 5px;
+      }
+    }
+    .display-data-container {
+      position: absolute;
+      top: $height-before-expand * 2;
+      left: 0;
+      width: 100%;
+      .data-container {
+        width: 200px;
+        min-height: $height;
+        padding: 0 5px 0 5px;
+        position: absolute;
+        top: $height + 10px;
+        .name-row {
+          display: block;
+          // border: 1px solid #8a2be2;
+          text-align: left;
+          width: 90px;
+          height: $height;
+          // border-radius: 5px;
+          line-height: $height;
+          // background-color: white;
+          text-transform: uppercase;
+          padding: 0 0 0 5px;
+          position: absolute;
+          top: -($height + 5px);
+        }
+        .typ-row,
+        .bonus-row,
+        .sila-row,
+        .zycie-row {
+          display: block;
+          width: 190px;
+          min-height: $height;
+          padding: 5px;
+          position: relative;
+        }
+        .typ-row::after,
+        .bonus-row::after,
+        .sila-row::after,
+        .zycie-row::after {
+          content: "";
+          position: absolute;
+          height: 2px;
+          width: 190px;
+          background-color: gray;
+          top: $height;
+          left: 0;
+        }
+      }
+      .typ {
+        left: 0;
+      }
+      .bonus {
+        left: 200px;
+      }
+      .sila {
+        left: 400px;
+      }
+      .zycie {
+        left: 600px;
+      }
+      .typ::after,
+      .bonus::after,
+      .sila::after {
+        content: "";
+        position: absolute;
+        height: 160px;
+        width: 2px;
+        background-color: gray;
+        top: -($height - 10px);
+        right: -1px;
+      }
+      .typ::before,
+      .bonus::before,
+      .sila::before,
+      .zycie::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 190px;
+        background-color: gray;
+        top: 0;
+      }
+    }
+  }
+  .expand-row-monster {
+    .name {
+      width: 600px !important;
+      left: 10px !important;
+    }
+    .display-data-container-monster {
+      top: $height-before-expand !important;
+      .heder-monster {
+        height: 40px;
+        width: 100%;
+        display: flex;
+        // background: purple;
+        span {
+          line-height: 40px;
+          text-align: center;
+          border-right: 1px solid black;
+          border-bottom: 1px solid black;
+        }
+        .jednostki-monster {
+          width: 185px;
+        }
+        .ilosc-monster {
+          width: 80px;
+        }
+        .typ-monster {
+          width: 130px;
+        }
+        .bonus-monster {
+          width: 185px;
+        }
+        .atak-monster {
+          width: 110px;
+        }
+        .zycie-monster {
+          width: 110px;
+          border-right: none;
+        }
+      }
+      .body-monster {
+        display: flex;
+        flex-direction: column;
+        .body-monster-each {
+          display: flex;
+          flex-direction: row;
+          border-bottom: 1px solid black;
+          .body-monster-jednostki {
+            width: 185px;
+            border-right: 1px solid black;
+            position: relative;
+            .lvl {
+              top: 20px;
+            }
+          }
+          .body-monster-ilosc {
+            width: 80px;
+            border-right: 1px solid black;
+          }
+          .body-monster-typ {
+            width: 130px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid black;
+          }
+          .body-monster-bonus {
+            width: 185px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid black;
+          }
+          .body-monster-atak {
+            width: 110px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid black;
+          }
+          .body-monster-zycie {
+            width: 110px;
+            border-right: none;
+          }
+        }
+      }
+      .body-monster-span {
+        padding-left: 5px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+      }
+    }
+  }
+  .test:checked ~ .expand-row {
+    height: $height-after-expand;
+    .lp {
+      opacity: 0;
+    }
+    .lvl {
+      top: ($height-before-expand - $height) / 2;
+      left: 130px;
+    }
+    .name {
+      top: ($height-before-expand - $height) / 2;
+      left: 170px;
+      width: 400px;
+    }
+    .army-ilosc {
+      top: (($height-before-expand - $height) / 2) + $height-before-expand;
+      width: 100px;
+      left: 690px;
+      padding: 5px;
+    }
+    .army-ap-bonus {
+      top: ($height-before-expand * 2) + 5px;
+      left: 505px;
+      width: 90px;
+      text-align: left;
+      color: black;
+      padding: 5px;
+    }
+    .army-hp-bonus {
+      top: ($height-before-expand * 2) + 5px;
+      left: 705px;
+      width: 90px;
+      text-align: left;
+      color: black;
+      padding: 5px;
+    }
+    .btn-neutral {
+      top: ($height-before-expand - $height) / 2;
+      left: 575px;
+    }
+    .btn-danger {
+      top: ($height-before-expand - $height) / 2;
+      left: 630px;
+    }
+  }
+  .test:checked ~ .xI {
+    height: $height-before-expand + 120px;
+  }
+
+  .test:checked ~ .xII {
+    height: $height-before-expand + 200px;
+  }
+
+  .test:checked ~ .xIII {
+    height: $height-before-expand + 280px;
+  }
+
+  .test:checked ~ .xIV {
+    height: $height-before-expand + 360px;
+  }
+
+  .test:checked ~ .xVI {
+    height: $height-before-expand + 520px;
+  }
+
+  & > .hr-selected {
+    border-color: #8a2be2;
+    width: 95%;
+    margin: auto auto;
+  }
+}
+
+// #selected {
+//   // display: none;
+// }
